@@ -66,7 +66,7 @@ public class AdvanceMaxTemperature {
     }
     
     Job job = new Job();
-    job.setJarByClass(MaxTemperature.class);
+    job.setJarByClass(AdvanceMaxTemperature.class);
     job.setJobName("Max temperature");
 
     FileInputFormat.addInputPath(job, new Path(args[0]));
