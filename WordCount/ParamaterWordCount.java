@@ -40,12 +40,12 @@ public class ParamaterWordCount {
                        Context context
                        ) throws IOException, InterruptedException {
       Configuration conf = context.getConfiguration();
-      String max = conf.get("max")
+      String max = conf.get("max");
       int sum = 0;
       for (IntWritable val : values) {
         sum += val.get();
       }
-      if (max < sum){
+      if (Integer.parseInt(max) < sum){
         result.set(sum);
         context.write(key, result);
       }      
@@ -54,7 +54,7 @@ public class ParamaterWordCount {
 
   public static void main(String[] args) throws Exception {
     Configuration conf = new Configuration();
-    conf.set("max", Integer.parseInt(args[3]));
+    conf.set("max", args[3]);
     Job job = Job.getInstance(conf, "word count");
     job.setJarByClass(ParamaterWordCount.class);
     job.setMapperClass(TokenizerMapper.class);
