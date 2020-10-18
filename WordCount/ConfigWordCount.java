@@ -56,7 +56,7 @@ public class ConfigWordCount {
     Configuration conf = new Configuration();
     conf.set("max", 5);
     Job job = Job.getInstance(conf, "word count");
-    job.setJarByClass(WordCount.class);
+    job.setJarByClass(ConfigWordCount.class);
     job.setMapperClass(TokenizerMapper.class);
     job.setCombinerClass(IntSumReducer.class);
     job.setReducerClass(IntSumReducer.class);
