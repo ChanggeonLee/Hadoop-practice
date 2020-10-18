@@ -41,7 +41,7 @@ public class MaxTemperature {
     }
   }
 
-  public class MaxTemperatureReducer
+  static public class MaxTemperatureReducer
     extends Reducer<Text, IntWritable, Text, IntWritable> {
     
     @Override
