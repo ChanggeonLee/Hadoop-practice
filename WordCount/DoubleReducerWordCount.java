@@ -51,7 +51,7 @@ public class DoubleReducerWordCount {
   public static void main(String[] args) throws Exception {
     Configuration conf = new Configuration();
     Job job = Job.getInstance(conf, "word count");
-    job.setJarByClass(AdvancedWordCount.class);
+    job.setJarByClass(DoubleReducerWordCount.class);
     job.setMapperClass(TokenizerMapper.class);
     job.setCombinerClass(IntSumReducer.class);
     job.setReducerClass(IntSumReducer.class);
@@ -63,3 +63,4 @@ public class DoubleReducerWordCount {
     System.exit(job.waitForCompletion(true) ? 0 : 1);
   }
 }
+
