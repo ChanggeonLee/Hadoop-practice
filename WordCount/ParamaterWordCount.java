@@ -54,7 +54,7 @@ public class ParamaterWordCount {
 
   public static void main(String[] args) throws Exception {
     Configuration conf = new Configuration();
-    conf.set("max", args[3]);
+    conf.set("max", args[2]);
     Job job = Job.getInstance(conf, "word count");
     job.setJarByClass(ParamaterWordCount.class);
     job.setMapperClass(TokenizerMapper.class);
